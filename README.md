@@ -11,7 +11,7 @@ A debug replay system for ML inference failures in the [SONIC framework](https:/
 
 ### Prerequisites
 
-- CMSSW `16_1_0_pre2` environment (for the C++ side)
+- CMSSW `16_1_0_pre2` environment (for the C++ side) using `DickyChant:triton_dump_output`
 - Apptainer (or Docker/Podman) with the `fastml/triton-torchgeo:25.08-py3-geometric` container image
 - GPU recommended (CPU fallback supported)
 
@@ -20,6 +20,8 @@ A debug replay system for ML inference failures in the [SONIC framework](https:/
 ```bash
 cd CMSSW_16_1_0_pre2/src
 cmsenv
+git cms-init
+git cms-merge-topic DickyChant:triton_dump_output
 scram b -j8
 ```
 
